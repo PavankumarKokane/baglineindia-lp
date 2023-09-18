@@ -1,0 +1,384 @@
+body {
+    margin: 0px;
+    font-family: "Montserrat", sans-serif;
+}
+header {
+    background: #2c2c2c;
+    padding: 15px 0;
+}
+header .new-logo-div img {
+    width: 292px;
+    height: auto;
+}
+.container {
+    width: 95%;
+    max-width: 100%;
+    align-items: center;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin: 0 auto;
+}
+footer {
+    padding: 10px 0;
+    background: #2c2c2c;
+    text-align: center;
+}
+.banner-section{
+    position: relative;
+}
+.scroll-sec{
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translate(-50%, -20px);
+}
+#contactForm .mg-bt-15 {
+    margin-bottom: 15px;
+}
+#contactForm .mg-bt-15.mobile {
+    margin-bottom: 0px;
+}
+span#phoneNumberError {
+    display: block;
+    color: #fff;
+    min-height: 15px;
+    margin: 0px;
+}
+span.error.active#phoneNumberError {
+    margin: 5px;
+}
+.scroll-down{
+    width: 9px;
+    height: 30px;
+    border: 2px solid #fff;
+    padding: 15px 10px;
+    border-radius: 50px;
+    position: relative;
+    margin: auto;
+    animation-name: bounce;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+.scroll-down:before{
+    content: "";
+    position: absolute;
+    width: 5px;
+    height: 10px;
+    background-color: #fff;
+    left: 44%;
+    top: 10px;
+    border-radius: 50px;
+}
+@keyframes bounce{
+    0%{top:0px;}
+    50%{top:30px;}
+    100%{top:0px;}
+}
+.footer-link {
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    line-height: 1.2;
+    font-weight: 400;
+    text-align: center;
+    color: #fff;
+    text-decoration: none;
+}
+#map {
+    height: 80vh;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* Page css */
+.banner-section .banner-img {
+    width: 100%;
+    object-fit: cover;
+    height: calc(100vh - 76px);
+}
+.map-section {
+    padding: 80px 0;
+}
+.form-div {
+    position: relative;
+    padding: 5px;
+}
+.form-main-div {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-right: 50px;
+    width: 40%;
+}
+.form-main-div input,
+.form-main-div textarea {
+    font-family: "Montserrat", sans-serif;
+    display: block;
+    color: #6b707e;
+    width: 100%;
+    height: 50px;
+    padding-left: 15px;
+    border-radius: 10px;
+    border: unset;
+}
+.form-main-div textarea {
+    padding-top: 15px;
+    height: auto;
+    margin-bottom: 25px;
+}
+.form-main-div .submit-btn {
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 1.84px;
+    background: #f2604a;
+    color: #fff;
+    text-transform: uppercase;
+    border-radius: 10px;
+    border: unset;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+.congratulations-div {
+    position: relative;
+}
+.congratulations-div .congratulations-bk {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+.congratulations-div .congratulations-content {
+    position: relative;
+    z-index: 1;
+    padding: 85px 0;
+}
+.congratulations-div .congratulations-img {
+    display: block;
+    margin: 0 auto;
+    width: 50%;
+    height: auto;
+}
+.congratulations-div .congratulations-content h4 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 40px;
+    line-height: 1.5;
+    font-weight: 600;
+    text-align: center;
+    color: #3b3b3b;
+    margin: 0;
+}
+.screenshort-div {
+    display: flex;
+    justify-content: center;
+}
+.screenshort-div .screenshot-txt {
+    font-family: "Montserrat", sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 22px;
+    line-height: 1.5;
+    font-weight: 500;
+    border: 2px dashed #f2604a;
+    padding: 15px 30px;
+    background: #f2604a14;
+    border-radius: 10px;
+    margin: 15px 0 0;
+}
+
+/* Define CSS styles for the marker label */
+.site-main {
+    z-index: unset !important;
+}
+.custom-marker-label {
+    font-family: "Montserrat", sans-serif;
+    color: #000 !important;
+    font-size: 10px !important;
+    font-weight: bold;
+    margin-bottom: 80px;
+    background: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+.marker-label.marker-label2 {
+    background: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-bottom: 70px;
+}
+/*overlay*/
+.overlay {
+    overflow: auto;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 99999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+.popup {
+    /* max-width: 1000px; */
+    width: 80%;
+    height: auto;
+    padding: 0px;
+    position: relative;
+    background: #fff;
+    /* margin: 50px auto 10px; */
+    border-radius: 15px;
+}
+.close {
+    text-align: center;
+    background: #fff;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: -10px;
+    right: -10px;
+    cursor: pointer;
+    color: #000;
+    font-size: 26px;
+    z-index: 99;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    box-shadow: 1px 5px 6px 2px rgb(0, 0, 0, 0.22);
+}
+.conatct-us-from {
+    padding: 20px;
+}
+/*overlay end*/
+
+.city-name {
+    text-align: center;
+}
+.city-img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+}
+.city-img.mb{
+    display: none;
+}
+@media only screen and (max-width: 1024px) {
+    .banner-section .banner-img{
+        height: auto;
+    }
+    .popup.popup1 {
+        width: 95%;
+    }
+}
+
+@media only screen and (max-width: 990px) {
+    header .new-logo-div img {
+        width: 200px;
+    }
+    .form-main-div input {
+        height: 35px;
+    }
+    .form-main-div textarea {
+        height: auto;
+    }
+    .congratulations-div .congratulations-content h4 {
+        font-size: 30px;
+    }
+    .screenshort-div .screenshot-txt {
+        font-size: 18px;
+        padding: 10px 20px;
+    }
+}
+@media only screen and (max-width: 600px) {
+    header .new-logo-div img {
+        width: 125px;
+    }
+    .container{
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 0 20px;
+        width: auto;
+    }
+    #map {
+        height: 60vh;
+        width: 100%;
+        margin: 0 auto;
+    }
+    .scroll-down{
+        width: 5px;
+        height: 20px;
+    }
+    #contactForm .mg-bt-15{
+        display: grid;
+    }
+    .form-main-div input, .form-main-div textarea{
+        width: auto;
+    }
+    .form-main-div {
+        position: unset;
+        transform: unset;
+        width: 95%;
+        margin: 10px auto;
+    }
+    .form-main-div input {
+        height: 40px;
+    }
+    .form-main-div textarea {
+        height: auto;
+    }
+    .city-img{
+        display: none;
+    }
+    .city-img.mb{
+        display: block;
+        width: 100%;
+        height: auto;
+        border-radius: 20px;
+    }
+    .form-main-div input,
+    .form-main-div textarea {
+        border-radius: 8px;
+        background: #F5F8FD;
+        border: 1px solid #E6E9F2;
+    }
+    .form-main-div .submit-btn { 
+        border-radius: 6px;
+        height: 45px;
+    }
+    span.error.active#phoneNumberError {
+        color: red;
+    }
+    .congratulations-div .congratulations-content h4 {
+        font-size: 16px;
+    }
+    .screenshort-div .screenshot-txt {
+        font-size: 12px;
+        padding: 7px 15px;
+    }
+    .congratulations-div .congratulations-content {
+        padding: 40px 0;
+    }
+    .screenshort-div .screenshot-txt svg{
+        width: 20px;
+        height: auto;
+    }
+
+    /* popup css */
+    .overlay .popup.popup1 {
+        height: auto;
+        max-height: 94vh;
+        overflow-y: auto;
+    }
+    .overlay .close{
+        top: 5px;
+        right: 2px;
+    }
+}

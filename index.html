@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Map</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="css/world-tourism.css" />
+    </head>
+    <body>
+        <header>
+            <div class="container">
+                <div class="new-logo-div">
+                    <img src="images/logo-new.webp" height="42" width="292" alt="Logo" />
+                </div>
+            </div>
+        </header>
+        <main>
+            <section class="banner-section" id="banner-sec">
+                <div>
+                    <picture>
+                        <source media="(max-width: 600px)" srcset="images/bagline-mb.webp" />
+                        <img class="banner-img" src="images/bagline-desk.webp" height="400" width="1366" alt="World Tourism Day Banner" />
+                    </picture>
+                </div>
+                <div class="scroll-sec" rel="map-sec">
+                    <div class="scroll-down">
+                    </div>
+                </div>
+            </section>
+
+            <section class="map-section" id="map-sec">
+                <div class="container">
+                    <div id="map"></div>
+                </div>
+            </section>
+            <!--form popup -->
+            <div id="overlay" class="overlay" style="display: none;">
+                <div id="popup" class="popup popup1 enquiry_popup">
+                    <div id="close-popup" class="close">&times;</div>
+                    <div class="main-div">
+                        <div class="form-div">
+                            <img class="city-img mb" loading="lazy" src="https://i.imgur.com/CVe6LFJ.png" height="382" width="350" alt="city name" />
+                            <img class="city-img" loading="lazy" src="https://i.imgur.com/CVe6LFJ.png" height="1012" width="592" alt="city name" />
+                            <div class="form-main-div">
+                                <form id="contactForm">
+                                    <div class="mg-bt-15">
+                                        <input type="text" id="name" autocomplete="off" class="alpha-only" name="name" placeholder="Name*" required />
+                                        <span class="error" id="nameError"></span>
+                                    </div>
+                                    <div class="mg-bt-15 mobile">
+                                        <input type="tel" id="phoneNumber" autocomplete="off" class="numeric-only" name="phoneNumber" placeholder="Phone*" required />
+                                        <span class="error" id="phoneNumberError"></span>
+                                    </div>
+                                    <div class="mg-bt-15">
+                                        <textarea id="message" name="message" rows="6" cols="50" placeholder="Why I want to travel here?" maxlength="300" required></textarea>
+                                        <span class="error" id="messageError"></span>
+                                    </div>
+                                    <div class="mg-bt-15">
+                                        <input type="submit" id="submitBtn" class="submit-btn" value="Submit" />
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="congratulations-div" id="congratulations" style="display: none;">
+                            <img class="congratulations-bk" loading="lazy" height="592" width="1012" src="images/congratulations-bk.webp" alt="Congratulations BK" />
+                            <div class="congratulations-content">
+                                <img class="congratulations-img" loading="lazy" height="564" width="200" src="images/congratulations.webp" alt="Congratulations" />
+                                <h4>for participating in the Contest</h4>
+                                <div class="screenshort-div">
+                                    <p class="screenshot-txt">
+                                        Don’t forget to take a screenshot
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="42.022" height="42.022" viewBox="0 0 42.022 42.022">
+                                            <g id="Group_212037" data-name="Group 212037" transform="translate(-3.109 -3.289)">
+                                                <path
+                                                    id="Path_223355"
+                                                    data-name="Path 223355"
+                                                    d="M3.11,33.305v9.5a2.5,2.5,0,0,0,2.5,2.5h9.506a1,1,0,1,0,0-2H5.61a.5.5,0,0,1-.5-.5v-9.5a1,1,0,0,0-2,0ZM33.125,45.31h9.5a2.5,2.5,0,0,0,2.5-2.5V33.3a1,1,0,1,0-2,0v9.5a.5.5,0,0,1-.5.5H33.125a1,1,0,0,0,0,2ZM45.13,15.3V5.79a2.5,2.5,0,0,0-2.5-2.5h-9.5a1,1,0,1,0,0,2h9.5a.5.5,0,0,1,.5.5V15.3a1,1,0,0,0,2,0ZM15.116,3.29H5.61a2.5,2.5,0,0,0-2.5,2.5V15.3a1,1,0,0,0,2,0V5.79a.5.5,0,0,1,.5-.5h9.506a1,1,0,0,0,0-2ZM34.661,18.3H31.63a.5.5,0,0,1-.416-.223l-1.777-2.665A2.5,2.5,0,0,0,27.356,14.3h-6.4a2.5,2.5,0,0,0-2.08,1.114L17.1,18.074a.5.5,0,0,1-.416.223H13.652a2.5,2.5,0,0,0-2.5,2.5V31.8a2.5,2.5,0,0,0,2.5,2.5H34.662a2.5,2.5,0,0,0,2.5-2.5V20.8a2.5,2.5,0,0,0-2.5-2.5Zm-10.505,2a5,5,0,1,0,5,5,5,5,0,0,0-5-5Zm0,2a3,3,0,1,1-2.908,3A3,3,0,0,1,24.156,22.3Z"
+                                                    fill="#f2604a"
+                                                    fill-rule="evenodd"
+                                                />
+                                            </g>
+                                        </svg>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <div>
+                <a class="footer-link" target="_blank" href="https://www.amuratech.com/">© 2023, All copyrights reserved.</a>
+            </div>
+        </footer>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAddGwg68Ic1yEGgud9bazO_x1t1vIytGk&callback=initMap" async></script>
+        <script src="js/app.js"></script>
+    </body>
+</html>
