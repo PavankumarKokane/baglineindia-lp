@@ -1,4 +1,5 @@
 var map;
+var current_city;
 var markers = [];
 var cities = [
     {
@@ -245,7 +246,7 @@ function initMap() {
                         var nearestCity = findNearestCity(event.latLng);
                         if (nearestCity) {
                             console.log("Nearest city: " + nearestCity);
-
+                            current_city = nearestCity;
                             // Set the marker's position to the nearest city
                             marker.setPosition(getLatLngForCity(nearestCity));
                             marker.setLabel({ text: nearestCity, className: "custom-marker-label" });
@@ -491,39 +492,29 @@ $(document).ready(function () {
         // If all fields are valid, you can proceed with the AJAX request
         if (name !== "" && phoneNumber !== "" && phoneNumber.length >= 10 && message !== "") {
             
-            var formData = {
-                name: name,
-                phoneNumber: phoneNumber,
-                message: message,
-            };
-
-            console.log(formData);
-
-            $.ajax({
-                type: "POST",
-                url: "your_backend_endpoint_url_here",
-                data: formData,
-                success: function (response) {
-                    // Handle the success response here
-
+            var settings = {
+                "url": "https://pavankokane.tech/baglineindia.php",
+                "method": "POST",
+                "timeout": 0,
+                "headers": {
+                  "Content-Type": "application/json"
+                },
+                "data": JSON.stringify({
+                    "Name": name,
+                    "Mobile": phoneNumber,
+                    "City": current_city,
+                    "Message": message
+                }),
+              };
+              
+            $.ajax(settings).done(function (response) {
+                //console.log(response);
+                //console.log(response.success);
+                if (response.success == true) {
                     $(".form-div").fadeOut(1000, function () {
-                        // After hiding the form-div, fadeIn the congratulations element
                         $("#congratulations").fadeIn(1000);
                     });
-
-                    // You can also update the UI or show a success message to the user
-                },
-                error: function (error) {
-                    // Handle any errors that occur during the AJAX request
-                    console.error("Error:", error);
-
-                    // You can also show an error message to the user
-                },
-            });
-
-            $(".form-div").fadeOut(1000, function () {
-                // After hiding the form-div, fadeIn the congratulations element
-                $("#congratulations").fadeIn(1000);
+                }
             });
         }
     });
